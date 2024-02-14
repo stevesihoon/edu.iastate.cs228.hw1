@@ -5,9 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static edu.iastate.cs228.hw1.TownCell.nCensus;
+
 
 /**
- *  @author <<Write your name here>>
+ *  @author <<Sihoon Lee>>
  *
  */
 public class Town {
@@ -23,6 +25,10 @@ public class Town {
 	 */
 	public Town(int length, int width) {
 		//TODO: Write your code here.
+		this.length = length;
+		this.width = width;
+
+		grid = new TownCell[length][width];
 	}
 	
 	/**
@@ -42,7 +48,7 @@ public class Town {
 	 */
 	public int getWidth() {
 		//TODO: Write/update your code here.
-		return 0;
+		return width;
 	}
 	
 	/**
@@ -51,7 +57,7 @@ public class Town {
 	 */
 	public int getLength() {
 		//TODO: Write/update your code here.
-		return 0;
+		return length;
 	}
 
 	/**
@@ -61,6 +67,15 @@ public class Town {
 	public void randomInit(int seed) {
 		Random rand = new Random(seed);
 		//TODO: Write your code here.
+
+		int randomCell = nCensus[rand.nextInt(5)];	// nCensus[0 ~ 4]
+
+		for (int i = 0; i < getLength(); i++){				// Initialize the grid
+			for(int j = 0; j < getWidth(); j++){
+
+			}
+		}
+
 	}
 	
 	/**

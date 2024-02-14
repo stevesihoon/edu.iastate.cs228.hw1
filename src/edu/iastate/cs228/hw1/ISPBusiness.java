@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * @author <<Write your name here>>
+ * @author <<Sihoon Lee>>
  *
  * The ISPBusiness class performs simulation over a grid 
  * plain with cells occupied by different TownCell types.

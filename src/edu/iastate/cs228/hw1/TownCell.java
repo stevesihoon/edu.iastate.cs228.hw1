@@ -2,7 +2,7 @@ package edu.iastate.cs228.hw1;
 
 /**
  * 
- * @author <<Write your name here>>
+ * @author <<Sihoon Lee>>
  *	Also provide appropriate comments for this class
  *
  */

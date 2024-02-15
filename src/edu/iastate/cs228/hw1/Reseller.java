@@ -7,7 +7,7 @@ public class Reseller extends TownCell{
 
     @Override
     public State who() {
-        return null;
+        return State.RESELLER;
     }
 
     @Override

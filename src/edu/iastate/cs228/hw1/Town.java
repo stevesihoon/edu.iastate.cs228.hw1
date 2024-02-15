@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static edu.iastate.cs228.hw1.TownCell.CASUAL;
 import static edu.iastate.cs228.hw1.TownCell.nCensus;
 
 
@@ -68,10 +69,25 @@ public class Town {
 		Random rand = new Random(seed);
 		//TODO: Write your code here.
 
-		int randomCell = nCensus[rand.nextInt(5)];	// nCensus[0 ~ 4]
-
 		for (int i = 0; i < getLength(); i++){				// Initialize the grid
 			for(int j = 0; j < getWidth(); j++){
+				switch(rand.nextInt(5)){
+					case 0:
+						grid[i][j] = new Reseller(this, length, width);
+						break;
+					case 1:
+						grid[i][j] = new Empty(this, length, width);
+						break;
+					case 2:
+						grid[i][j] = new Casual(this, length, width);
+						break;
+					case 3:
+						grid[i][j] = new Outage(this, length, width);
+						break;
+					case 4:
+						grid[i][j] = new Streamer(this, length, width);
+						break;
+				}
 
 			}
 		}
@@ -88,6 +104,24 @@ public class Town {
 	public String toString() {
 		String s = "";
 		//TODO: Write your code here.
+
+		for (int i = 0; i < getLength(); i++){
+			for(int j = 0; j < getWidth(); j++){
+				if (grid[i][j].equals(new Reseller(this, length, width))) {
+					s = "R";
+				} else if (grid[i][j].equals(new Empty(this, length, width))) {
+					s = "E";
+				} else if (grid[i][j].equals(new Casual(this, length, width))) {
+					s = "C";
+				} else if (grid[i][j].equals(new Outage(this, length, width))) {
+					s = "O";
+				} else if (grid[i][j].equals(new Streamer(this, length, width))) {
+					s = "S";
+				}
+
+			}
+		}
+
 		return s;
 	}
 }

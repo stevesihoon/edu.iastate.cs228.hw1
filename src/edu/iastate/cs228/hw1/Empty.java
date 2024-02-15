@@ -5,7 +5,7 @@ public class Empty extends TownCell{
         super(p, r, c);
     }
     public State who(){
-        return null;
+        return State.EMPTY;
     }
     public TownCell next(Town tnew){
         return null;

@@ -42,13 +42,27 @@ public abstract class TownCell {
 	public void census(int nCensus[]) {
 		// zero the counts of all customers
 		nCensus[RESELLER] = 0; 
-		nCensus[EMPTY] = 0; 
+		nCensus[EMPTY] = 0;
 		nCensus[CASUAL] = 0; 
 		nCensus[OUTAGE] = 0; 
 		nCensus[STREAMER] = 0; 
 
-		//TODO: Write your code here.
+		//TODO: Write your code here
 
+		TownCell standardCell = plain.grid[row][col];	// set a standard Cell
+		State cellType = standardCell.who();
+
+		for(int i = row - 1; i < row + 1; i++){
+			for(int j = col - 1; j < col + 1; j++){
+				switch(cellType){
+					case RESELLER -> nCensus[RESELLER]++;
+					case EMPTY -> nCensus[EMPTY]++;
+					case CASUAL -> nCensus[CASUAL]++;
+					case OUTAGE -> nCensus[OUTAGE]++;
+					case STREAMER -> nCensus[STREAMER]++;
+				}
+			}
+		}
 	}
 
 	/**

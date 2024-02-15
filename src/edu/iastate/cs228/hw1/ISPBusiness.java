@@ -19,6 +19,7 @@ public class ISPBusiness {
 	public static Town updatePlain(Town tOld) {
 		Town tNew = new Town(tOld.getLength(), tOld.getWidth());
 		//TODO: Write your code here.
+
 		return tNew;
 	}
 	
@@ -29,6 +30,7 @@ public class ISPBusiness {
 	 */
 	public static int getProfit(Town town) {
 		//TODO: Write/update your code here.
+
 		return 0;
 	}
 	

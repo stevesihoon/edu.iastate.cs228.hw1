@@ -7,7 +7,7 @@ public class Casual extends TownCell{
 
     @Override
     public State who() {
-        return null;
+        return State.CASUAL;
     }
 
     @Override

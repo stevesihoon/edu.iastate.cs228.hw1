@@ -7,7 +7,7 @@ public class Outage extends TownCell{
 
     @Override
     public State who() {
-        return null;
+        return State.OUTAGE;
     }
 
     @Override

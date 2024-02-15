@@ -8,7 +8,7 @@ public class Streamer extends TownCell{
 
     @Override
     public State who() {
-        return null;
+        return State.STREAMER;
     }
 
     @Override

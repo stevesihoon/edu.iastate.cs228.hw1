@@ -8,6 +8,12 @@ public class Empty extends TownCell{
         return State.EMPTY;
     }
     public TownCell next(Town tnew){
-        return null;
+        census(nCensus);
+        if (nCensus[OUTAGE] + nCensus[EMPTY] <= 1) {
+            return new Reseller(tnew, row, col);
+
+        } else {
+            return new Casual(tnew, row, col);
+        }
     }
 }

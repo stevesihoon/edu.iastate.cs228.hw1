@@ -12,6 +12,8 @@ public class Outage extends TownCell{
 
     @Override
     public TownCell next(Town tNew) {
-        return null;
+        census(nCensus);
+
+        return new Empty(tNew, row, col);
     }
 }

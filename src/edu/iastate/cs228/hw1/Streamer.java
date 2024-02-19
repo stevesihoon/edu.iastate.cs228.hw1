@@ -13,6 +13,24 @@ public class Streamer extends TownCell{
 
     @Override
     public TownCell next(Town tNew) {
-        return null;
+        census(nCensus);
+
+        if (nCensus[OUTAGE] + nCensus[EMPTY] <= 1) {
+            return new Reseller(tNew, row, col);
+
+        } else if (nCensus[RESELLER] > 0) {
+            return new Outage(tNew, row, col);
+
+        } else if (nCensus[OUTAGE] > 0) {
+            return new Empty(tNew, row, col);
+
+        } else if (nCensus[CASUAL] > 4) {
+            return new Streamer(tNew, row, col);
+
+        } else {
+            return new Streamer(tNew, row, col);
+        }
+
+
     }
 }

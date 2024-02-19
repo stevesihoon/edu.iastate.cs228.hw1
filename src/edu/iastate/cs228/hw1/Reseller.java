@@ -12,6 +12,19 @@ public class Reseller extends TownCell{
 
     @Override
     public TownCell next(Town tNew) {
-        return null;
+        census(nCensus);
+
+        if (nCensus[CASUAL] < 4) {
+            return new Empty(tNew, row, col);
+
+        } else if (nCensus[EMPTY] > 2) {
+            return new Empty(tNew, row, col);
+
+        } else if (nCensus[CASUAL] > 4) {
+            return new Streamer(tNew, row, col);
+
+        } else {
+            return new Reseller(tNew, row, col);
+        }
     }
 }

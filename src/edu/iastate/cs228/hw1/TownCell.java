@@ -53,7 +53,12 @@ public abstract class TownCell {
 		State cellType = standardCell.who();
 
 		for(int i = row - 1; i < row + 1; i++){
-			for(int j = col - 1; j < col + 1; j++){
+			for(int j = col - 1; j < col + 1; j++){		// for
+
+
+				TownCell sC = plain.grid[i][j];
+				sC.who();
+
 				switch(cellType){
 					case RESELLER -> nCensus[RESELLER]++;
 					case EMPTY -> nCensus[EMPTY]++;
